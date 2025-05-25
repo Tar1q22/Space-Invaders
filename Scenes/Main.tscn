@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6ikdrwy26e32"]
+
+[ext_resource type="Script" path="res://Scenes/Main.gd" id="1_3iogu"]
+[ext_resource type="PackedScene" uid="uid://b85gyqe2ygt5n" path="res://Scenes/Turret.tscn" id="1_c8k6c"]
+[ext_resource type="Texture2D" uid="uid://8y8fu4wo3qbg" path="res://Materials/Background.png" id="3_o2vdn"]
+[ext_resource type="PackedScene" uid="uid://bl1a4ur3l6fwo" path="res://Scenes/UI/in_game.tscn" id="4_0etf8"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_3iogu")
+
+[node name="Turret" parent="." instance=ExtResource("1_c8k6c")]
+position = Vector2(941, 1015)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -10
+texture_filter = 1
+texture = ExtResource("3_o2vdn")
+centered = false
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="InGame" parent="UI" instance=ExtResource("4_0etf8")]
