@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://rxo4jsidhe7l"]
 
-[ext_resource type="Script" path="res://Scenes/alien.gd" id="1_wnl4i"]
+[ext_resource type="Script" uid="uid://cg0w7shgpa45n" path="res://Scenes/alien.gd" id="1_wnl4i"]
 [ext_resource type="Texture2D" uid="uid://36782oqe0p4f" path="res://Materials/Saucer.png" id="2_s8xwt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_43w0n"]
