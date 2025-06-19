@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6ikdrwy26e32"]
+[gd_scene load_steps=6 format=3 uid="uid://c6ikdrwy26e32"]
 
-[ext_resource type="Script" uid="uid://qmqrsrkqyb0p" path="res://Scenes/Main.gd" id="1_3iogu"]
+[ext_resource type="Script" uid="uid://qmqrsrkqyb0p" path="res://Scripts/Main.gd" id="1_3iogu"]
 [ext_resource type="PackedScene" uid="uid://b85gyqe2ygt5n" path="res://Scenes/Turret.tscn" id="1_c8k6c"]
 [ext_resource type="Texture2D" uid="uid://8y8fu4wo3qbg" path="res://Materials/Background.png" id="3_o2vdn"]
 [ext_resource type="PackedScene" uid="uid://bl1a4ur3l6fwo" path="res://Scenes/UI/in_game.tscn" id="4_0etf8"]
+[ext_resource type="Script" uid="uid://cu1gc11jwytlk" path="res://Scripts/alien_controller.gd" id="5_pbw6q"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_3iogu")
@@ -28,3 +29,6 @@ offset_bottom = -5.0
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(4, 0)
 anchor_mode = 0
+
+[node name="AlienController" type="Node2D" parent="."]
+script = ExtResource("5_pbw6q")

@@ -10,7 +10,6 @@ var ymargin: int = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_init_aliens()
 	
 	pass # Replace with function body.
 
@@ -20,10 +19,3 @@ func _process(delta):
 	Engine.max_fps = 60
 	pass
 	
-func _init_aliens():
-	for i in range(rows):
-		for j in range(columns):
-			alien = alienScene.instantiate()
-			alien.position = Vector2(xmargin+(j*((winWidth-(xmargin*2))/(columns-1))), ymargin+i*70)
-			alien.margin = xmargin-200
-			add_child(alien)
