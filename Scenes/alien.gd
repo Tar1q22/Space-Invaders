@@ -3,7 +3,7 @@ var lastPos = Vector2(100, 100)
 var directions: Array = [Vector2(1, 0), Vector2(0, 0)]
 var direction: Vector2 = Vector2(1, 0)
 var speed: float = 0.5
-var margin: int = 100
+var margin: int = 100 # Given by Main
 var score = 0
 
 @onready var area = $Area2D
@@ -16,7 +16,6 @@ var score = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	add_to_group("Enemies")
-	#position = Vector2(lastPos)
 	pass # Replace with function body.
 
 
@@ -25,25 +24,26 @@ func _physics_process(delta):
 	#print(Vector2(1, 0)*Vector2(-1, 0))
 	if (_collide_with_borders()):
 		print("colliding")
-		get_parent().get_tree().call_group("Enemies", "_change_dir")
-	position += direction*speed
+		
+	position += direction * speed
 
 func _collide_with_borders():
 	var leftedge = position.x-shape.get_shape().size.x/2
 	var rightedge = position.x+shape.get_shape().size.x/2
 	if (leftedge <= leftBorder || rightedge >= rightBorder):
 		if (leftedge <= leftBorder):
-			position.x = leftBorder + speed
+			get_parent().get_tree().call_group("Enemies", "_change_dir", leftBorder)
 		else:
-			position.x = rightBorder - speed
+			get_parent().get_tree().call_group("Enemies", "_change_dir", rightBorder)
 		return true
 	return false
 	#if (area.get_child().get_shape().get_extents().x):
 	
-func _change_dir():
+func _change_dir(border: int):
 	direction = direction * Vector2(-1, 0)
-	position.y += 20
-	#position += direction * speed
+	position.x = border + direction[0]*50
+	position.y -= 20
+	print(position)
 	
 func _incr_speed():
 	speed += 1

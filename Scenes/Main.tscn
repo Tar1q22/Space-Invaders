@@ -9,7 +9,7 @@
 script = ExtResource("1_3iogu")
 
 [node name="Turret" parent="." instance=ExtResource("1_c8k6c")]
-position = Vector2(941, 1015)
+position = Vector2(941, 1012)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -10
@@ -20,3 +20,11 @@ centered = false
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="InGame" parent="UI" instance=ExtResource("4_0etf8")]
+offset_left = 1.0
+offset_top = -5.0
+offset_right = 1.0
+offset_bottom = -5.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(4, 0)
+anchor_mode = 0
